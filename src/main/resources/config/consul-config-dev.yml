@@ -136,8 +136,8 @@ springdoc:
         name: Gateway API
       - url: /services/msuser/v3/api-docs
         name: User Service
-      - url: /services/msreel/v3/api-docs
-        name: Reel Service
+      - url: /services/msreels/v3/api-docs
+        name: Reels Service
       - url: /services/mscommentlike/v3/api-docs
         name: CommentLike Service
       - url: /services/msnotification/v3/api-docs

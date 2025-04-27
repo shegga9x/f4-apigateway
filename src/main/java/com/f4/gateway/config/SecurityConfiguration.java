@@ -84,7 +84,7 @@ public class SecurityConfiguration {
         http
             .securityMatcher(
                 new NegatedServerWebExchangeMatcher(
-                    new OrServerWebExchangeMatcher(pathMatchers("/app/**", "/i18n/**", "/content/**", "/swagger-ui/**"))
+                    new OrServerWebExchangeMatcher(pathMatchers("/app/**", "/i18n/**", "/content/**"))
                 )
             )
             .cors(withDefaults())
@@ -128,6 +128,7 @@ public class SecurityConfiguration {
                     .pathMatchers("/management/info").permitAll()
                     .pathMatchers("/management/prometheus").permitAll()
                     .pathMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
+                    .pathMatchers("/swagger-ui/**").authenticated()
             )
             .oauth2Login(oauth2 -> oauth2.authorizationRequestResolver(authorizationRequestResolver(this.clientRegistrationRepository)))
             .oauth2Client(withDefaults())
