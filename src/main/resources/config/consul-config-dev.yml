@@ -6,7 +6,7 @@
 # SSH port forwarding configuration
 ssh:
   forwarding:
-    enabled: true # Set to true to enable SSH port forwarding
+    enabled: true  # Set to true to enable SSH port forwarding
   remote:
     host: appf4.io.vn
   user: root
@@ -97,7 +97,7 @@ spring:
       cookie:
         name: XSRF-TOKEN
         path: /
-        secure: false # Set to true in production with HTTPS
+        secure: false  # Set to true in production with HTTPS
         same-site: Lax
   r2dbc:
     url: r2dbc:mysql://microservices.appf4.io.vn:${ssh.mysql_port}/${ssh.mysql_database}
@@ -126,25 +126,5 @@ spring:
 redis:
   server: redis://appf4.io.vn:6379
 
-springdoc:
-  swagger-ui:
-    enabled: true
-    path: /swagger-ui.html
-    config-url: /v3/api-docs/swagger-config
-    urls:
-      - url: /v3/api-docs
-        name: Gateway API
-      - url: /services/msuser/v3/api-docs
-        name: User Service
-      - url: /services/msreels/v3/api-docs
-        name: Reels Service
-      - url: /services/mscommentlike/v3/api-docs
-        name: CommentLike Service
-      - url: /services/msnotification/v3/api-docs
-        name: Notification Service
-      - url: /services/msfeed/v3/api-docs
-        name: Feed Service
-  enable-native-support: true
-  api-docs:
-    enabled: true
-    path: /v3/api-docs
+
+
