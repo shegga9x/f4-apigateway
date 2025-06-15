@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (like(); as likeRef) {
+      <div>
+        <h2 data-cy="likeDetailsHeading"><span jhiTranslate="gatewayApp.msCommentlikeLike.detail.title">Like</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeLike.id">Id</span></dt>
+          <dd>
+            <span>{{ likeRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeLike.reelId">Reel Id</span></dt>
+          <dd>
+            <span>{{ likeRef.reelId }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeLike.userId">User Id</span></dt>
+          <dd>
+            <span>{{ likeRef.userId }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeLike.createdAt">Created At</span></dt>
+          <dd>
+            <span>{{ likeRef.createdAt | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/like', likeRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

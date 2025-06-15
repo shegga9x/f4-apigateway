@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (reel(); as reelRef) {
+      <div>
+        <h2 data-cy="reelDetailsHeading"><span jhiTranslate="gatewayApp.msReelReel.detail.title">Reel</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="gatewayApp.msReelReel.id">Id</span></dt>
+          <dd>
+            <span>{{ reelRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msReelReel.userId">User Id</span></dt>
+          <dd>
+            <span>{{ reelRef.userId }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msReelReel.title">Title</span></dt>
+          <dd>
+            <span>{{ reelRef.title }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msReelReel.videoUrl">Video Url</span></dt>
+          <dd>
+            <span>{{ reelRef.videoUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msReelReel.createdAt">Created At</span></dt>
+          <dd>
+            <span>{{ reelRef.createdAt | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/reel', reelRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

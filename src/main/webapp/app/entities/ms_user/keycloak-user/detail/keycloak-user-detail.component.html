@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (keycloakUser(); as keycloakUserRef) {
+      <div>
+        <h2 data-cy="keycloakUserDetailsHeading"><span jhiTranslate="gatewayApp.msUserKeycloakUser.detail.title">Keycloak User</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="gatewayApp.msUserKeycloakUser.id">Id</span></dt>
+          <dd>
+            <span>{{ keycloakUserRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msUserKeycloakUser.username">Username</span></dt>
+          <dd>
+            <span>{{ keycloakUserRef.username }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msUserKeycloakUser.email">Email</span></dt>
+          <dd>
+            <span>{{ keycloakUserRef.email }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msUserKeycloakUser.realmId">Realm Id</span></dt>
+          <dd>
+            <span>{{ keycloakUserRef.realmId }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msUserKeycloakUser.userId">User Id</span></dt>
+          <dd>
+            <span>{{ keycloakUserRef.userId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/keycloak-user', keycloakUserRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

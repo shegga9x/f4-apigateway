@@ -7,7 +7,14 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "msUserUser": "User",
+        "msUserKeycloakUser": "Keycloak User",
+        "msReelReel": "Reel",
+        "msCommentlikeComment": "Comment",
+        "msCommentlikeLike": "Like",
+        "msNotificationNotification": "Notification",
+        "msFeedFeedItem": "Feed Item"
       },
       "account": {
         "main": "Account",

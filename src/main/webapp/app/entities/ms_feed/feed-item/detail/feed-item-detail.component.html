@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (feedItem(); as feedItemRef) {
+      <div>
+        <h2 data-cy="feedItemDetailsHeading"><span jhiTranslate="gatewayApp.msFeedFeedItem.detail.title">Feed Item</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.id">Id</span></dt>
+          <dd>
+            <span>{{ feedItemRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.userId">User Id</span></dt>
+          <dd>
+            <span>{{ feedItemRef.userId }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.reelId">Reel Id</span></dt>
+          <dd>
+            <span>{{ feedItemRef.reelId }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.timestamp">Timestamp</span></dt>
+          <dd>
+            <span>{{ feedItemRef.timestamp | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/feed-item', feedItemRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

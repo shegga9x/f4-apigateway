@@ -1,0 +1,31 @@
+{
+  "gatewayApp": {
+    "msUserKeycloakUser": {
+      "home": {
+        "title": "Keycloak Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Keycloak User",
+        "createOrEditLabel": "Create or edit a Keycloak User",
+        "notFound": "No Keycloak Users found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Keycloak User {{ id }}?"
+      },
+      "detail": {
+        "title": "Keycloak User"
+      },
+      "id": "Id",
+      "username": "Username",
+      "email": "Email",
+      "realmId": "Realm Id",
+      "userId": "User Id"
+    }
+  },
+  "msUserApp": {
+    "msUserKeycloakUser": {
+      "created": "A new Keycloak User is created with identifier {{ param }}",
+      "updated": "A Keycloak User is updated with identifier {{ param }}",
+      "deleted": "A Keycloak User is deleted with identifier {{ param }}"
+    }
+  }
+}

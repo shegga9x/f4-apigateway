@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "msReelReel": {
+      "home": {
+        "title": "Reels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reel",
+        "createOrEditLabel": "Create or edit a Reel",
+        "search": "Search for Reel",
+        "notFound": "No Reels found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Reel {{ id }}?"
+      },
+      "detail": {
+        "title": "Reel"
+      },
+      "id": "Id",
+      "userId": "User Id",
+      "title": "Title",
+      "videoUrl": "Video Url",
+      "createdAt": "Created At"
+    }
+  },
+  "msReelApp": {
+    "msReelReel": {
+      "created": "A new Reel is created with identifier {{ param }}",
+      "updated": "A Reel is updated with identifier {{ param }}",
+      "deleted": "A Reel is deleted with identifier {{ param }}"
+    }
+  }
+}

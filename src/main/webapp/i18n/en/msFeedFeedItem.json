@@ -1,0 +1,31 @@
+{
+  "gatewayApp": {
+    "msFeedFeedItem": {
+      "home": {
+        "title": "Feed Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Feed Item",
+        "createOrEditLabel": "Create or edit a Feed Item",
+        "search": "Search for Feed Item",
+        "notFound": "No Feed Items found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Feed Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Feed Item"
+      },
+      "id": "Id",
+      "userId": "User Id",
+      "reelId": "Reel Id",
+      "timestamp": "Timestamp"
+    }
+  },
+  "msFeedApp": {
+    "msFeedFeedItem": {
+      "created": "A new Feed Item is created with identifier {{ param }}",
+      "updated": "A Feed Item is updated with identifier {{ param }}",
+      "deleted": "A Feed Item is deleted with identifier {{ param }}"
+    }
+  }
+}
