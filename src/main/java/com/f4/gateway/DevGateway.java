@@ -21,6 +21,7 @@ import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
+import org.springframework.core.env.PropertySource;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.beans.factory.annotation.Value;
