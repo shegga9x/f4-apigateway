@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20250422052515"
   },
-  "applications": ["gateway", "ms_commentlike"],
+  "applications": ["gateway", "mscommentlike"],
   "dto": "mapstruct",
   "fields": [
     {
