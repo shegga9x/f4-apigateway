@@ -35,6 +35,22 @@
           <dd>
             <span>{{ commentRef.createdAt | formatMediumDatetime }}</span>
           </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeComment.updatedAt">Updated At</span></dt>
+          <dd>
+            <span>{{ commentRef.updatedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeComment.likesCount">Likes Count</span></dt>
+          <dd>
+            <span>{{ commentRef.likesCount }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeComment.repliesCount">Replies Count</span></dt>
+          <dd>
+            <span>{{ commentRef.repliesCount }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msCommentlikeComment.mentions">Mentions</span></dt>
+          <dd>
+            <span>{{ commentRef.mentions }}</span>
+          </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

@@ -10,6 +10,7 @@ import { CommentService, RestComment } from './comment.service';
 const requireRestSample: RestComment = {
   ...sampleWithRequiredData,
   createdAt: sampleWithRequiredData.createdAt?.toJSON(),
+  updatedAt: sampleWithRequiredData.updatedAt?.toJSON(),
 };
 
 describe('Comment Service', () => {

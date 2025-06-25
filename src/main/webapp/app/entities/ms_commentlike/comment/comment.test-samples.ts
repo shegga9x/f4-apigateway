@@ -9,15 +9,22 @@ export const sampleWithRequiredData: IComment = {
   userId: 'b7ebe521-c750-4a84-a396-86112dae0869',
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T16:37'),
+  updatedAt: dayjs('2025-04-21T21:22'),
+  likesCount: 4558,
+  repliesCount: 24082,
 };
 
 export const sampleWithPartialData: IComment = {
-  id: '6392db02-5846-4067-b73d-3d74f7a9706a',
-  parentType: 'yahoo stigmatize sugary',
-  parentId: '5f5f5c6c-b544-4b23-bc75-ca7e8db9c558',
-  userId: 'b6255b82-641a-4589-8544-cf0aaaa9c51e',
+  id: '392db025-8460-4677-b3d3-d74f7a9706ae',
+  parentType: 'hmph whoever good',
+  parentId: 'f5f5c6cb-544b-423c-a75c-a7e8db9c558d',
+  userId: '6255b826-41a5-4895-844c-f0aaaa9c51e0',
   content: '../fake-data/blob/hipster.txt',
-  createdAt: dayjs('2025-04-21T07:35'),
+  createdAt: dayjs('2025-04-21T15:03'),
+  updatedAt: dayjs('2025-04-21T10:22'),
+  likesCount: 6625,
+  repliesCount: 8716,
+  mentions: '5a73f14d-0b2f-4d5c-bae5-79be469f502e',
 };
 
 export const sampleWithFullData: IComment = {
@@ -27,6 +34,10 @@ export const sampleWithFullData: IComment = {
   userId: '88944be2-e07e-445f-866b-70879029a38d',
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T19:05'),
+  updatedAt: dayjs('2025-04-21T10:57'),
+  likesCount: 9231,
+  repliesCount: 28854,
+  mentions: '7ffb2ea3-231a-4899-b7cb-61b278937544',
 };
 
 export const sampleWithNewData: NewComment = {
@@ -35,6 +46,9 @@ export const sampleWithNewData: NewComment = {
   userId: '115d9131-4409-426d-a986-2c83f6a4ee40',
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T20:13'),
+  updatedAt: dayjs('2025-04-21T21:44'),
+  likesCount: 24922,
+  repliesCount: 26122,
   id: null,
 };
 

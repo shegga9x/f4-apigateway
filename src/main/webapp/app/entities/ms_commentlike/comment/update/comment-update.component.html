@@ -114,6 +114,94 @@
             </div>
           }
         </div>
+
+        @let updatedAtRef = editForm.get('updatedAt')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_updatedAt" jhiTranslate="gatewayApp.msCommentlikeComment.updatedAt">Updated At</label>
+          <div class="d-flex">
+            <input
+              id="field_updatedAt"
+              data-cy="updatedAt"
+              type="datetime-local"
+              class="form-control"
+              name="updatedAt"
+              formControlName="updatedAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          @if (updatedAtRef.invalid && (updatedAtRef.dirty || updatedAtRef.touched)) {
+            <div>
+              @if (editForm.get('updatedAt')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('updatedAt')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let likesCountRef = editForm.get('likesCount')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_likesCount" jhiTranslate="gatewayApp.msCommentlikeComment.likesCount">Likes Count</label>
+          <input
+            type="number"
+            class="form-control"
+            name="likesCount"
+            id="field_likesCount"
+            data-cy="likesCount"
+            formControlName="likesCount"
+          />
+          @if (likesCountRef.invalid && (likesCountRef.dirty || likesCountRef.touched)) {
+            <div>
+              @if (editForm.get('likesCount')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('likesCount')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let repliesCountRef = editForm.get('repliesCount')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_repliesCount" jhiTranslate="gatewayApp.msCommentlikeComment.repliesCount"
+            >Replies Count</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="repliesCount"
+            id="field_repliesCount"
+            data-cy="repliesCount"
+            formControlName="repliesCount"
+          />
+          @if (repliesCountRef.invalid && (repliesCountRef.dirty || repliesCountRef.touched)) {
+            <div>
+              @if (editForm.get('repliesCount')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('repliesCount')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mentions" jhiTranslate="gatewayApp.msCommentlikeComment.mentions">Mentions</label>
+          <input type="text" class="form-control" name="mentions" id="field_mentions" data-cy="mentions" formControlName="mentions" />
+        </div>
       </div>
 
       <div>

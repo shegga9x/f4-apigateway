@@ -19,7 +19,11 @@
       "parentId": "Parent Id",
       "userId": "User Id",
       "content": "Content",
-      "createdAt": "Created At"
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "likesCount": "Likes Count",
+      "repliesCount": "Replies Count",
+      "mentions": "Mentions"
     }
   },
   "msCommentlikeApp": {

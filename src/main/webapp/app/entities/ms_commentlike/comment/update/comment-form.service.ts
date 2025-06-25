@@ -19,15 +19,16 @@ type CommentFormGroupInput = IComment | PartialWithRequiredKeyOf<NewComment>;
 /**
  * Type that converts some properties for forms.
  */
-type FormValueOf<T extends IComment | NewComment> = Omit<T, 'createdAt'> & {
+type FormValueOf<T extends IComment | NewComment> = Omit<T, 'createdAt' | 'updatedAt'> & {
   createdAt?: string | null;
+  updatedAt?: string | null;
 };
 
 type CommentFormRawValue = FormValueOf<IComment>;
 
 type NewCommentFormRawValue = FormValueOf<NewComment>;
 
-type CommentFormDefaults = Pick<NewComment, 'id' | 'createdAt'>;
+type CommentFormDefaults = Pick<NewComment, 'id' | 'createdAt' | 'updatedAt'>;
 
 type CommentFormGroupContent = {
   id: FormControl<CommentFormRawValue['id'] | NewComment['id']>;
@@ -36,6 +37,10 @@ type CommentFormGroupContent = {
   userId: FormControl<CommentFormRawValue['userId']>;
   content: FormControl<CommentFormRawValue['content']>;
   createdAt: FormControl<CommentFormRawValue['createdAt']>;
+  updatedAt: FormControl<CommentFormRawValue['updatedAt']>;
+  likesCount: FormControl<CommentFormRawValue['likesCount']>;
+  repliesCount: FormControl<CommentFormRawValue['repliesCount']>;
+  mentions: FormControl<CommentFormRawValue['mentions']>;
 };
 
 export type CommentFormGroup = FormGroup<CommentFormGroupContent>;
@@ -70,6 +75,16 @@ export class CommentFormService {
       createdAt: new FormControl(commentRawValue.createdAt, {
         validators: [Validators.required],
       }),
+      updatedAt: new FormControl(commentRawValue.updatedAt, {
+        validators: [Validators.required],
+      }),
+      likesCount: new FormControl(commentRawValue.likesCount, {
+        validators: [Validators.required],
+      }),
+      repliesCount: new FormControl(commentRawValue.repliesCount, {
+        validators: [Validators.required],
+      }),
+      mentions: new FormControl(commentRawValue.mentions),
     });
   }
 
@@ -93,6 +108,7 @@ export class CommentFormService {
     return {
       id: null,
       createdAt: currentTime,
+      updatedAt: currentTime,
     };
   }
 
@@ -100,6 +116,7 @@ export class CommentFormService {
     return {
       ...rawComment,
       createdAt: dayjs(rawComment.createdAt, DATE_TIME_FORMAT),
+      updatedAt: dayjs(rawComment.updatedAt, DATE_TIME_FORMAT),
     };
   }
 
@@ -109,6 +126,7 @@ export class CommentFormService {
     return {
       ...comment,
       createdAt: comment.createdAt ? comment.createdAt.format(DATE_TIME_FORMAT) : undefined,
+      updatedAt: comment.updatedAt ? comment.updatedAt.format(DATE_TIME_FORMAT) : undefined,
     };
   }
 }

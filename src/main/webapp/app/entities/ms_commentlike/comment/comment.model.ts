@@ -7,6 +7,10 @@ export interface IComment {
   userId?: string | null;
   content?: string | null;
   createdAt?: dayjs.Dayjs | null;
+  updatedAt?: dayjs.Dayjs | null;
+  likesCount?: number | null;
+  repliesCount?: number | null;
+  mentions?: string | null;
 }
 
 export type NewComment = Omit<IComment, 'id'> & { id: null };

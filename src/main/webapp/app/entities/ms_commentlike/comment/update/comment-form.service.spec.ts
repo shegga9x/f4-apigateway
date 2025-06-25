@@ -25,6 +25,10 @@ describe('Comment Form Service', () => {
             userId: expect.any(Object),
             content: expect.any(Object),
             createdAt: expect.any(Object),
+            updatedAt: expect.any(Object),
+            likesCount: expect.any(Object),
+            repliesCount: expect.any(Object),
+            mentions: expect.any(Object),
           }),
         );
       });
@@ -40,6 +44,10 @@ describe('Comment Form Service', () => {
             userId: expect.any(Object),
             content: expect.any(Object),
             createdAt: expect.any(Object),
+            updatedAt: expect.any(Object),
+            likesCount: expect.any(Object),
+            repliesCount: expect.any(Object),
+            mentions: expect.any(Object),
           }),
         );
       });

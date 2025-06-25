@@ -75,6 +75,34 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
+            <th scope="col" jhiSortBy="updatedAt">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msCommentlikeComment.updatedAt">Updated At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="likesCount">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msCommentlikeComment.likesCount">Likes Count</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="repliesCount">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msCommentlikeComment.repliesCount">Replies Count</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mentions">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msCommentlikeComment.mentions">Mentions</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -89,6 +117,10 @@
               <td>{{ comment.userId }}</td>
               <td>{{ comment.content }}</td>
               <td>{{ comment.createdAt | formatMediumDatetime }}</td>
+              <td>{{ comment.updatedAt | formatMediumDatetime }}</td>
+              <td>{{ comment.likesCount }}</td>
+              <td>{{ comment.repliesCount }}</td>
+              <td>{{ comment.mentions }}</td>
               <td class="text-end">
                 <div class="btn-group">
                   <a [routerLink]="['/comment', comment.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

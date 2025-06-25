@@ -11,8 +11,9 @@ import { IComment, NewComment } from '../comment.model';
 
 export type PartialUpdateComment = Partial<IComment> & Pick<IComment, 'id'>;
 
-type RestOf<T extends IComment | NewComment> = Omit<T, 'createdAt'> & {
+type RestOf<T extends IComment | NewComment> = Omit<T, 'createdAt' | 'updatedAt'> & {
   createdAt?: string | null;
+  updatedAt?: string | null;
 };
 
 export type RestComment = RestOf<IComment>;
@@ -101,6 +102,7 @@ export class CommentService {
     return {
       ...comment,
       createdAt: comment.createdAt?.toJSON() ?? null,
+      updatedAt: comment.updatedAt?.toJSON() ?? null,
     };
   }
 
@@ -108,6 +110,7 @@ export class CommentService {
     return {
       ...restComment,
       createdAt: restComment.createdAt ? dayjs(restComment.createdAt) : undefined,
+      updatedAt: restComment.updatedAt ? dayjs(restComment.updatedAt) : undefined,
     };
   }
 
