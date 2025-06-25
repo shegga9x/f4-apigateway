@@ -122,6 +122,13 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
+            <th scope="col" jhiSortBy="commentsCount">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.commentsCount">Comments Count</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
             <th scope="col" jhiSortBy="sharesCount">
               <div class="d-flex">
                 <span jhiTranslate="gatewayApp.msFeedFeedItem.sharesCount">Shares Count</span>
@@ -161,6 +168,7 @@
               </td>
               <td>{{ feedItem.location }}</td>
               <td>{{ feedItem.likesCount }}</td>
+              <td>{{ feedItem.commentsCount }}</td>
               <td>{{ feedItem.sharesCount }}</td>
               <td>{{ feedItem.createdAt | formatMediumDatetime }}</td>
               <td>{{ feedItem.updatedAt | formatMediumDatetime }}</td>

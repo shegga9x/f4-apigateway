@@ -10,16 +10,17 @@ export const sampleWithRequiredData: IFeedItem = {
 };
 
 export const sampleWithPartialData: IFeedItem = {
-  id: '1816af3c-7bd4-4771-afd7-dcc7743949d5',
-  userId: '2857f22f-f8bb-4043-8712-4e8662c43fac',
+  id: '816af3c7-bd47-471f-8d7d-cc7743949d5b',
+  userId: '857f22ff-8bb0-4437-8124-e8662c43fac1',
   content: '../fake-data/blob/hipster.txt',
-  videoUrl: 'freely',
+  videoUrl: 'who measly',
   visibility: 'FRIENDS_ONLY',
-  location: 'smart outstanding',
-  likesCount: 20562,
-  sharesCount: 23659,
-  createdAt: dayjs('2025-04-21T12:00'),
-  updatedAt: dayjs('2025-04-21T08:51'),
+  location: 'powerless yum',
+  likesCount: 10566,
+  commentsCount: 394,
+  sharesCount: 23861,
+  createdAt: dayjs('2025-04-21T15:15'),
+  updatedAt: dayjs('2025-04-21T06:34'),
 };
 
 export const sampleWithFullData: IFeedItem = {
@@ -31,9 +32,10 @@ export const sampleWithFullData: IFeedItem = {
   visibility: 'FRIENDS_ONLY',
   location: 'cheerfully',
   likesCount: 5979,
-  sharesCount: 27986,
-  createdAt: dayjs('2025-04-22T05:13'),
-  updatedAt: dayjs('2025-04-21T13:03'),
+  commentsCount: 27986,
+  sharesCount: 32515,
+  createdAt: dayjs('2025-04-21T13:03'),
+  updatedAt: dayjs('2025-04-21T06:23'),
 };
 
 export const sampleWithNewData: NewFeedItem = {
