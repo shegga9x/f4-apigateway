@@ -31,7 +31,8 @@ type LikeFormDefaults = Pick<NewLike, 'id' | 'createdAt'>;
 
 type LikeFormGroupContent = {
   id: FormControl<LikeFormRawValue['id'] | NewLike['id']>;
-  reelId: FormControl<LikeFormRawValue['reelId']>;
+  parentType: FormControl<LikeFormRawValue['parentType']>;
+  parentId: FormControl<LikeFormRawValue['parentId']>;
   userId: FormControl<LikeFormRawValue['userId']>;
   createdAt: FormControl<LikeFormRawValue['createdAt']>;
 };
@@ -53,7 +54,10 @@ export class LikeFormService {
           validators: [Validators.required],
         },
       ),
-      reelId: new FormControl(likeRawValue.reelId, {
+      parentType: new FormControl(likeRawValue.parentType, {
+        validators: [Validators.required],
+      }),
+      parentId: new FormControl(likeRawValue.parentId, {
         validators: [Validators.required],
       }),
       userId: new FormControl(likeRawValue.userId, {

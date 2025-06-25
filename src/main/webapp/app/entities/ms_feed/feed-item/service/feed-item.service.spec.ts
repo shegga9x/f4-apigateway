@@ -9,7 +9,8 @@ import { FeedItemService, RestFeedItem } from './feed-item.service';
 
 const requireRestSample: RestFeedItem = {
   ...sampleWithRequiredData,
-  timestamp: sampleWithRequiredData.timestamp?.toJSON(),
+  createdAt: sampleWithRequiredData.createdAt?.toJSON(),
+  updatedAt: sampleWithRequiredData.updatedAt?.toJSON(),
 };
 
 describe('FeedItem Service', () => {

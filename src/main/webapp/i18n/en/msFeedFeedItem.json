@@ -17,8 +17,13 @@
       },
       "id": "Id",
       "userId": "User Id",
-      "reelId": "Reel Id",
-      "timestamp": "Timestamp"
+      "content": "Content",
+      "imageUrl": "Image Url",
+      "videoUrl": "Video Url",
+      "visibility": "Visibility",
+      "location": "Location",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
     }
   },
   "msFeedApp": {

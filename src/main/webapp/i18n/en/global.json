@@ -9,12 +9,12 @@
         "main": "Entities",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
         "msUserUser": "User",
-        "msUserKeycloakUser": "Keycloak User",
         "msReelReel": "Reel",
         "msCommentlikeComment": "Comment",
-        "msCommentlikeLike": "Like",
         "msNotificationNotification": "Notification",
-        "msFeedFeedItem": "Feed Item"
+        "msFeedFeedItem": "Feed Item",
+        "msUserKeycloakUser": "Keycloak User",
+        "msCommentlikeLike": "Like"
       },
       "account": {
         "main": "Account",

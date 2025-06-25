@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250422052515"
+  },
+  "applications": ["gateway", "ms_commentlike"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "parentType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "parentId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "ms_commentlike",
+  "name": "Like",
+  "pagination": "infinite-scroll",
+  "relationships": [],
+  "service": "serviceImpl"
+}

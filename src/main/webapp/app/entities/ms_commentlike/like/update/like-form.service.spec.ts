@@ -20,7 +20,8 @@ describe('Like Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            reelId: expect.any(Object),
+            parentType: expect.any(Object),
+            parentId: expect.any(Object),
             userId: expect.any(Object),
             createdAt: expect.any(Object),
           }),
@@ -33,7 +34,8 @@ describe('Like Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            reelId: expect.any(Object),
+            parentType: expect.any(Object),
+            parentId: expect.any(Object),
             userId: expect.any(Object),
             createdAt: expect.any(Object),
           }),

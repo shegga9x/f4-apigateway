@@ -14,8 +14,9 @@ import { IFeedItem, NewFeedItem } from '../feed-item.model';
 
 export type PartialUpdateFeedItem = Partial<IFeedItem> & Pick<IFeedItem, 'id'>;
 
-type RestOf<T extends IFeedItem | NewFeedItem> = Omit<T, 'timestamp'> & {
-  timestamp?: string | null;
+type RestOf<T extends IFeedItem | NewFeedItem> = Omit<T, 'createdAt' | 'updatedAt'> & {
+  createdAt?: string | null;
+  updatedAt?: string | null;
 };
 
 export type RestFeedItem = RestOf<IFeedItem>;
@@ -32,8 +33,8 @@ export class FeedItemService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/feed-items', 'msfeed');
-  protected resourceSearchUrl = this.applicationConfigService.getEndpointFor('api/feed-items/_search', 'msfeed');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/feed-items', 'ms_feed');
+  protected resourceSearchUrl = this.applicationConfigService.getEndpointFor('api/feed-items/_search', 'ms_feed');
 
   create(feedItem: NewFeedItem): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(feedItem);
@@ -113,14 +114,16 @@ export class FeedItemService {
   protected convertDateFromClient<T extends IFeedItem | NewFeedItem | PartialUpdateFeedItem>(feedItem: T): RestOf<T> {
     return {
       ...feedItem,
-      timestamp: feedItem.timestamp?.toJSON() ?? null,
+      createdAt: feedItem.createdAt?.toJSON() ?? null,
+      updatedAt: feedItem.updatedAt?.toJSON() ?? null,
     };
   }
 
   protected convertDateFromServer(restFeedItem: RestFeedItem): IFeedItem {
     return {
       ...restFeedItem,
-      timestamp: restFeedItem.timestamp ? dayjs(restFeedItem.timestamp) : undefined,
+      createdAt: restFeedItem.createdAt ? dayjs(restFeedItem.createdAt) : undefined,
+      updatedAt: restFeedItem.updatedAt ? dayjs(restFeedItem.updatedAt) : undefined,
     };
   }
 

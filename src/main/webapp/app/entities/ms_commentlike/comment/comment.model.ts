@@ -2,7 +2,8 @@ import dayjs from 'dayjs/esm';
 
 export interface IComment {
   id: string;
-  reelId?: string | null;
+  parentType?: string | null;
+  parentId?: string | null;
   userId?: string | null;
   content?: string | null;
   createdAt?: dayjs.Dayjs | null;

@@ -58,18 +58,6 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/keycloak-user"
-                  routerLinkActive="active"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  (click)="collapseNavbar()"
-                >
-                  <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
-                  <span jhiTranslate="global.menu.entities.msUserKeycloakUser">Keycloak User</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
                   routerLink="/reel"
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"
@@ -94,18 +82,6 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/like"
-                  routerLinkActive="active"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  (click)="collapseNavbar()"
-                >
-                  <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
-                  <span jhiTranslate="global.menu.entities.msCommentlikeLike">Like</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
                   routerLink="/notification"
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"
@@ -125,6 +101,30 @@
                 >
                   <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
                   <span jhiTranslate="global.menu.entities.msFeedFeedItem">Feed Item</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/keycloak-user"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="collapseNavbar()"
+                >
+                  <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                  <span jhiTranslate="global.menu.entities.msUserKeycloakUser">Keycloak User</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/like"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="collapseNavbar()"
+                >
+                  <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                  <span jhiTranslate="global.menu.entities.msCommentlikeLike">Like</span>
                 </a>
               </li>
               <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->

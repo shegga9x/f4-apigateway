@@ -7,7 +7,7 @@ export const sampleWithRequiredData: IReel = {
   userId: '5c9a4e51-59f6-4e85-b74e-64bed6b05dd6',
   title: 'out fast',
   videoUrl: 'pace quizzically wallop',
-  createdAt: dayjs('2025-06-14T09:29'),
+  createdAt: dayjs('2025-04-22T03:54'),
 };
 
 export const sampleWithPartialData: IReel = {
@@ -15,7 +15,7 @@ export const sampleWithPartialData: IReel = {
   userId: '4c6d1f00-30df-42dc-8133-e54eb31ced55',
   title: 'oh twine',
   videoUrl: 'unless for for',
-  createdAt: dayjs('2025-06-14T08:13'),
+  createdAt: dayjs('2025-04-22T02:38'),
 };
 
 export const sampleWithFullData: IReel = {
@@ -23,14 +23,14 @@ export const sampleWithFullData: IReel = {
   userId: '9c0398ce-7a04-4398-b33c-62679242b32f',
   title: 'who seemingly',
   videoUrl: 'if',
-  createdAt: dayjs('2025-06-13T22:59'),
+  createdAt: dayjs('2025-04-21T17:24'),
 };
 
 export const sampleWithNewData: NewReel = {
   userId: 'b102b6bf-bbc0-4833-b990-5c3c43d250b4',
   title: 'medium',
   videoUrl: 'however obedience er',
-  createdAt: dayjs('2025-06-13T16:59'),
+  createdAt: dayjs('2025-04-21T11:24'),
   id: null,
 };
 

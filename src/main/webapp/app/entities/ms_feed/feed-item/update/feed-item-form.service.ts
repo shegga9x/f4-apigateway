@@ -19,21 +19,27 @@ type FeedItemFormGroupInput = IFeedItem | PartialWithRequiredKeyOf<NewFeedItem>;
 /**
  * Type that converts some properties for forms.
  */
-type FormValueOf<T extends IFeedItem | NewFeedItem> = Omit<T, 'timestamp'> & {
-  timestamp?: string | null;
+type FormValueOf<T extends IFeedItem | NewFeedItem> = Omit<T, 'createdAt' | 'updatedAt'> & {
+  createdAt?: string | null;
+  updatedAt?: string | null;
 };
 
 type FeedItemFormRawValue = FormValueOf<IFeedItem>;
 
 type NewFeedItemFormRawValue = FormValueOf<NewFeedItem>;
 
-type FeedItemFormDefaults = Pick<NewFeedItem, 'id' | 'timestamp'>;
+type FeedItemFormDefaults = Pick<NewFeedItem, 'id' | 'createdAt' | 'updatedAt'>;
 
 type FeedItemFormGroupContent = {
   id: FormControl<FeedItemFormRawValue['id'] | NewFeedItem['id']>;
   userId: FormControl<FeedItemFormRawValue['userId']>;
-  reelId: FormControl<FeedItemFormRawValue['reelId']>;
-  timestamp: FormControl<FeedItemFormRawValue['timestamp']>;
+  content: FormControl<FeedItemFormRawValue['content']>;
+  imageUrl: FormControl<FeedItemFormRawValue['imageUrl']>;
+  videoUrl: FormControl<FeedItemFormRawValue['videoUrl']>;
+  visibility: FormControl<FeedItemFormRawValue['visibility']>;
+  location: FormControl<FeedItemFormRawValue['location']>;
+  createdAt: FormControl<FeedItemFormRawValue['createdAt']>;
+  updatedAt: FormControl<FeedItemFormRawValue['updatedAt']>;
 };
 
 export type FeedItemFormGroup = FormGroup<FeedItemFormGroupContent>;
@@ -56,10 +62,15 @@ export class FeedItemFormService {
       userId: new FormControl(feedItemRawValue.userId, {
         validators: [Validators.required],
       }),
-      reelId: new FormControl(feedItemRawValue.reelId, {
+      content: new FormControl(feedItemRawValue.content),
+      imageUrl: new FormControl(feedItemRawValue.imageUrl),
+      videoUrl: new FormControl(feedItemRawValue.videoUrl),
+      visibility: new FormControl(feedItemRawValue.visibility),
+      location: new FormControl(feedItemRawValue.location),
+      createdAt: new FormControl(feedItemRawValue.createdAt, {
         validators: [Validators.required],
       }),
-      timestamp: new FormControl(feedItemRawValue.timestamp, {
+      updatedAt: new FormControl(feedItemRawValue.updatedAt, {
         validators: [Validators.required],
       }),
     });
@@ -84,14 +95,16 @@ export class FeedItemFormService {
 
     return {
       id: null,
-      timestamp: currentTime,
+      createdAt: currentTime,
+      updatedAt: currentTime,
     };
   }
 
   private convertFeedItemRawValueToFeedItem(rawFeedItem: FeedItemFormRawValue | NewFeedItemFormRawValue): IFeedItem | NewFeedItem {
     return {
       ...rawFeedItem,
-      timestamp: dayjs(rawFeedItem.timestamp, DATE_TIME_FORMAT),
+      createdAt: dayjs(rawFeedItem.createdAt, DATE_TIME_FORMAT),
+      updatedAt: dayjs(rawFeedItem.updatedAt, DATE_TIME_FORMAT),
     };
   }
 
@@ -100,7 +113,8 @@ export class FeedItemFormService {
   ): FeedItemFormRawValue | PartialWithRequiredKeyOf<NewFeedItemFormRawValue> {
     return {
       ...feedItem,
-      timestamp: feedItem.timestamp ? feedItem.timestamp.format(DATE_TIME_FORMAT) : undefined,
+      createdAt: feedItem.createdAt ? feedItem.createdAt.format(DATE_TIME_FORMAT) : undefined,
+      updatedAt: feedItem.updatedAt ? feedItem.updatedAt.format(DATE_TIME_FORMAT) : undefined,
     };
   }
 }

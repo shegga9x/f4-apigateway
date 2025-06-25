@@ -75,17 +75,56 @@
                 }
               </div>
             </th>
-            <th scope="col" jhiSortBy="reelId">
+            <th scope="col" jhiSortBy="content">
               <div class="d-flex">
-                <span jhiTranslate="gatewayApp.msFeedFeedItem.reelId">Reel Id</span>
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.content">Content</span>
                 @if (!currentSearch) {
                   <fa-icon class="p-1" icon="sort"></fa-icon>
                 }
               </div>
             </th>
-            <th scope="col" jhiSortBy="timestamp">
+            <th scope="col" jhiSortBy="imageUrl">
               <div class="d-flex">
-                <span jhiTranslate="gatewayApp.msFeedFeedItem.timestamp">Timestamp</span>
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.imageUrl">Image Url</span>
+                @if (!currentSearch) {
+                  <fa-icon class="p-1" icon="sort"></fa-icon>
+                }
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="videoUrl">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.videoUrl">Video Url</span>
+                @if (!currentSearch) {
+                  <fa-icon class="p-1" icon="sort"></fa-icon>
+                }
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="visibility">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.visibility">Visibility</span>
+                @if (!currentSearch) {
+                  <fa-icon class="p-1" icon="sort"></fa-icon>
+                }
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="location">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.location">Location</span>
+                @if (!currentSearch) {
+                  <fa-icon class="p-1" icon="sort"></fa-icon>
+                }
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdAt">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.createdAt">Created At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedAt">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msFeedFeedItem.updatedAt">Updated At</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
@@ -100,8 +139,15 @@
                 <a [routerLink]="['/feed-item', feedItem.id, 'view']">{{ feedItem.id }}</a>
               </td>
               <td>{{ feedItem.userId }}</td>
-              <td>{{ feedItem.reelId }}</td>
-              <td>{{ feedItem.timestamp | formatMediumDatetime }}</td>
+              <td>{{ feedItem.content }}</td>
+              <td>{{ feedItem.imageUrl }}</td>
+              <td>{{ feedItem.videoUrl }}</td>
+              <td [jhiTranslate]="'gatewayApp.FeedVisibility.' + (feedItem.visibility ?? 'null')">
+                {{ { null: '', PUBLIC: 'PUBLIC', PRIVATE: 'PRIVATE', FRIENDS_ONLY: 'FRIENDS_ONLY' }[feedItem.visibility ?? 'null'] }}
+              </td>
+              <td>{{ feedItem.location }}</td>
+              <td>{{ feedItem.createdAt | formatMediumDatetime }}</td>
+              <td>{{ feedItem.updatedAt | formatMediumDatetime }}</td>
               <td class="text-end">
                 <div class="btn-group">
                   <a [routerLink]="['/feed-item', feedItem.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

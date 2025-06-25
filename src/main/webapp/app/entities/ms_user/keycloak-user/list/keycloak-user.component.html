@@ -71,7 +71,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody infinite-scroll (scrolled)="loadNextPage()" [infiniteScrollDisabled]="!hasMorePage()" [infiniteScrollDistance]="0">
+        <tbody>
           @for (keycloakUser of keycloakUsers(); track trackId(keycloakUser)) {
             <tr data-cy="entityTable">
               <td>

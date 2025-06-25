@@ -31,7 +31,8 @@ type CommentFormDefaults = Pick<NewComment, 'id' | 'createdAt'>;
 
 type CommentFormGroupContent = {
   id: FormControl<CommentFormRawValue['id'] | NewComment['id']>;
-  reelId: FormControl<CommentFormRawValue['reelId']>;
+  parentType: FormControl<CommentFormRawValue['parentType']>;
+  parentId: FormControl<CommentFormRawValue['parentId']>;
   userId: FormControl<CommentFormRawValue['userId']>;
   content: FormControl<CommentFormRawValue['content']>;
   createdAt: FormControl<CommentFormRawValue['createdAt']>;
@@ -54,7 +55,10 @@ export class CommentFormService {
           validators: [Validators.required],
         },
       ),
-      reelId: new FormControl(commentRawValue.reelId, {
+      parentType: new FormControl(commentRawValue.parentType, {
+        validators: [Validators.required],
+      }),
+      parentId: new FormControl(commentRawValue.parentId, {
         validators: [Validators.required],
       }),
       userId: new FormControl(commentRawValue.userId, {

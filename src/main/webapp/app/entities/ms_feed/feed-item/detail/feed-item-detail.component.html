@@ -19,13 +19,35 @@
           <dd>
             <span>{{ feedItemRef.userId }}</span>
           </dd>
-          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.reelId">Reel Id</span></dt>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.content">Content</span></dt>
           <dd>
-            <span>{{ feedItemRef.reelId }}</span>
+            <span>{{ feedItemRef.content }}</span>
           </dd>
-          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.timestamp">Timestamp</span></dt>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.imageUrl">Image Url</span></dt>
           <dd>
-            <span>{{ feedItemRef.timestamp | formatMediumDatetime }}</span>
+            <span>{{ feedItemRef.imageUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.videoUrl">Video Url</span></dt>
+          <dd>
+            <span>{{ feedItemRef.videoUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.visibility">Visibility</span></dt>
+          <dd>
+            <span [jhiTranslate]="'gatewayApp.FeedVisibility.' + (feedItemRef.visibility ?? 'null')">{{
+              { null: '', PUBLIC: 'PUBLIC', PRIVATE: 'PRIVATE', FRIENDS_ONLY: 'FRIENDS_ONLY' }[feedItemRef.visibility ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.location">Location</span></dt>
+          <dd>
+            <span>{{ feedItemRef.location }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.createdAt">Created At</span></dt>
+          <dd>
+            <span>{{ feedItemRef.createdAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="gatewayApp.msFeedFeedItem.updatedAt">Updated At</span></dt>
+          <dd>
+            <span>{{ feedItemRef.updatedAt | formatMediumDatetime }}</span>
           </dd>
         </dl>
 

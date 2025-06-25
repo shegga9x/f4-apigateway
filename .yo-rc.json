@@ -2,12 +2,34 @@
   "generator-jhipster": {
     "applicationIndex": 0,
     "applicationType": "gateway",
+    "applications": {
+      "ms_commentlike": {
+        "applicationIndex": 3,
+        "serverPort": "8085"
+      },
+      "ms_feed": {
+        "applicationIndex": 5,
+        "serverPort": "8084"
+      },
+      "ms_notification": {
+        "applicationIndex": 4,
+        "serverPort": "8083"
+      },
+      "ms_reel": {
+        "applicationIndex": 2,
+        "serverPort": "8082"
+      },
+      "ms_user": {
+        "applicationIndex": 1,
+        "serverPort": "8081"
+      }
+    },
     "authenticationType": "oauth2",
     "baseName": "gateway",
     "databaseType": "no",
     "devServerPort": 4200,
     "enableSwaggerCodegen": true,
-    "entities": [],
+    "entities": ["User", "Reel", "Comment", "Notification", "FeedItem", "KeycloakUser", "Like"],
     "jhipsterVersion": "8.10.0",
     "languages": ["en"],
     "monorepository": true,

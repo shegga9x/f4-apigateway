@@ -21,8 +21,13 @@ describe('FeedItem Form Service', () => {
           expect.objectContaining({
             id: expect.any(Object),
             userId: expect.any(Object),
-            reelId: expect.any(Object),
-            timestamp: expect.any(Object),
+            content: expect.any(Object),
+            imageUrl: expect.any(Object),
+            videoUrl: expect.any(Object),
+            visibility: expect.any(Object),
+            location: expect.any(Object),
+            createdAt: expect.any(Object),
+            updatedAt: expect.any(Object),
           }),
         );
       });
@@ -34,8 +39,13 @@ describe('FeedItem Form Service', () => {
           expect.objectContaining({
             id: expect.any(Object),
             userId: expect.any(Object),
-            reelId: expect.any(Object),
-            timestamp: expect.any(Object),
+            content: expect.any(Object),
+            imageUrl: expect.any(Object),
+            videoUrl: expect.any(Object),
+            visibility: expect.any(Object),
+            location: expect.any(Object),
+            createdAt: expect.any(Object),
+            updatedAt: expect.any(Object),
           }),
         );
       });

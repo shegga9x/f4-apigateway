@@ -32,8 +32,8 @@ export class ReelService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/reels', 'msreel');
-  protected resourceSearchUrl = this.applicationConfigService.getEndpointFor('api/reels/_search', 'msreel');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/reels', 'ms_reel');
+  protected resourceSearchUrl = this.applicationConfigService.getEndpointFor('api/reels/_search', 'ms_reel');
 
   create(reel: NewReel): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(reel);

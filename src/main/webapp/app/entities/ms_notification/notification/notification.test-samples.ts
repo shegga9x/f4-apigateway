@@ -8,7 +8,7 @@ export const sampleWithRequiredData: INotification = {
   type: 'punctuation indeed',
   message: '../fake-data/blob/hipster.txt',
   isRead: false,
-  createdAt: dayjs('2025-06-13T13:28'),
+  createdAt: dayjs('2025-04-21T07:49'),
 };
 
 export const sampleWithPartialData: INotification = {
@@ -17,7 +17,7 @@ export const sampleWithPartialData: INotification = {
   type: 'grandpa guzzle till',
   message: '../fake-data/blob/hipster.txt',
   isRead: true,
-  createdAt: dayjs('2025-06-13T23:29'),
+  createdAt: dayjs('2025-04-21T17:50'),
 };
 
 export const sampleWithFullData: INotification = {
@@ -26,7 +26,7 @@ export const sampleWithFullData: INotification = {
   type: 'compromise whereas painfully',
   message: '../fake-data/blob/hipster.txt',
   isRead: true,
-  createdAt: dayjs('2025-06-14T04:19'),
+  createdAt: dayjs('2025-04-21T22:41'),
 };
 
 export const sampleWithNewData: NewNotification = {
@@ -34,7 +34,7 @@ export const sampleWithNewData: NewNotification = {
   type: 'whose',
   message: '../fake-data/blob/hipster.txt',
   isRead: false,
-  createdAt: dayjs('2025-06-14T10:55'),
+  createdAt: dayjs('2025-04-22T05:17'),
   id: null,
 };
 

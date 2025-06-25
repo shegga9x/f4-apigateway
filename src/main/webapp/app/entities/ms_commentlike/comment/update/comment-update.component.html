@@ -27,13 +27,33 @@
           </div>
         }
 
-        @let reelIdRef = editForm.get('reelId')!;
+        @let parentTypeRef = editForm.get('parentType')!;
         <div class="mb-3">
-          <label class="form-label" for="field_reelId" jhiTranslate="gatewayApp.msCommentlikeComment.reelId">Reel Id</label>
-          <input type="text" class="form-control" name="reelId" id="field_reelId" data-cy="reelId" formControlName="reelId" />
-          @if (reelIdRef.invalid && (reelIdRef.dirty || reelIdRef.touched)) {
+          <label class="form-label" for="field_parentType" jhiTranslate="gatewayApp.msCommentlikeComment.parentType">Parent Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="parentType"
+            id="field_parentType"
+            data-cy="parentType"
+            formControlName="parentType"
+          />
+          @if (parentTypeRef.invalid && (parentTypeRef.dirty || parentTypeRef.touched)) {
             <div>
-              @if (editForm.get('reelId')?.errors?.required) {
+              @if (editForm.get('parentType')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let parentIdRef = editForm.get('parentId')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_parentId" jhiTranslate="gatewayApp.msCommentlikeComment.parentId">Parent Id</label>
+          <input type="text" class="form-control" name="parentId" id="field_parentId" data-cy="parentId" formControlName="parentId" />
+          @if (parentIdRef.invalid && (parentIdRef.dirty || parentIdRef.touched)) {
+            <div>
+              @if (editForm.get('parentId')?.errors?.required) {
                 <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
               }
             </div>

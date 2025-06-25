@@ -1,5 +1,4 @@
-import { Component, NgZone, OnInit, WritableSignal, computed, inject, signal } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
+import { Component, NgZone, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, Data, ParamMap, Router, RouterModule } from '@angular/router';
 import { Observable, Subscription, combineLatest, filter, tap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -7,19 +6,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import SharedModule from 'app/shared/shared.module';
 import { SortByDirective, SortDirective, SortService, type SortState, sortStateSignal } from 'app/shared/sort';
 import { FormsModule } from '@angular/forms';
-
-import { ITEMS_PER_PAGE } from 'app/config/pagination.constants';
 import { DEFAULT_SORT_DATA, ITEM_DELETED_EVENT, SORT } from 'app/config/navigation.constants';
-import { ParseLinks } from 'app/core/util/parse-links.service';
-import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
+import { IKeycloakUser } from '../keycloak-user.model';
 import { EntityArrayResponseType, KeycloakUserService } from '../service/keycloak-user.service';
 import { KeycloakUserDeleteDialogComponent } from '../delete/keycloak-user-delete-dialog.component';
-import { IKeycloakUser } from '../keycloak-user.model';
 
 @Component({
   selector: 'jhi-keycloak-user',
   templateUrl: './keycloak-user.component.html',
-  imports: [RouterModule, FormsModule, SharedModule, SortDirective, SortByDirective, InfiniteScrollDirective],
+  imports: [RouterModule, FormsModule, SharedModule, SortDirective, SortByDirective],
 })
 export class KeycloakUserComponent implements OnInit {
   subscription: Subscription | null = null;
@@ -28,16 +23,10 @@ export class KeycloakUserComponent implements OnInit {
 
   sortState = sortStateSignal({});
 
-  itemsPerPage = ITEMS_PER_PAGE;
-  links: WritableSignal<Record<string, undefined | Record<string, string | undefined>>> = signal({});
-  hasMorePage = computed(() => !!this.links().next);
-  isFirstFetch = computed(() => Object.keys(this.links()).length === 0);
-
   public readonly router = inject(Router);
   protected readonly keycloakUserService = inject(KeycloakUserService);
   protected readonly activatedRoute = inject(ActivatedRoute);
   protected readonly sortService = inject(SortService);
-  protected parseLinks = inject(ParseLinks);
   protected modalService = inject(NgbModal);
   protected ngZone = inject(NgZone);
 
@@ -47,18 +36,15 @@ export class KeycloakUserComponent implements OnInit {
     this.subscription = combineLatest([this.activatedRoute.queryParamMap, this.activatedRoute.data])
       .pipe(
         tap(([params, data]) => this.fillComponentAttributeFromRoute(params, data)),
-        tap(() => this.reset()),
-        tap(() => this.load()),
+        tap(() => {
+          if (this.keycloakUsers().length === 0) {
+            this.load();
+          } else {
+            this.keycloakUsers.set(this.refineData(this.keycloakUsers()));
+          }
+        }),
       )
       .subscribe();
-  }
-
-  reset(): void {
-    this.keycloakUsers.set([]);
-  }
-
-  loadNextPage(): void {
-    this.load();
   }
 
   delete(keycloakUser: IKeycloakUser): void {
@@ -90,53 +76,28 @@ export class KeycloakUserComponent implements OnInit {
   }
 
   protected onResponseSuccess(response: EntityArrayResponseType): void {
-    this.fillComponentAttributesFromResponseHeader(response.headers);
     const dataFromBody = this.fillComponentAttributesFromResponseBody(response.body);
-    this.keycloakUsers.set(dataFromBody);
+    this.keycloakUsers.set(this.refineData(dataFromBody));
+  }
+
+  protected refineData(data: IKeycloakUser[]): IKeycloakUser[] {
+    const { predicate, order } = this.sortState();
+    return predicate && order ? data.sort(this.sortService.startSort({ predicate, order })) : data;
   }
 
   protected fillComponentAttributesFromResponseBody(data: IKeycloakUser[] | null): IKeycloakUser[] {
-    // If there is previous link, data is a infinite scroll pagination content.
-    if (this.links().prev) {
-      const keycloakUsersNew = this.keycloakUsers();
-      if (data) {
-        for (const d of data) {
-          if (keycloakUsersNew.some(op => op.id === d.id)) {
-            keycloakUsersNew.push(d);
-          }
-        }
-      }
-      return keycloakUsersNew;
-    }
     return data ?? [];
-  }
-
-  protected fillComponentAttributesFromResponseHeader(headers: HttpHeaders): void {
-    const linkHeader = headers.get('link');
-    if (linkHeader) {
-      this.links.set(this.parseLinks.parseAll(linkHeader));
-    } else {
-      this.links.set({});
-    }
   }
 
   protected queryBackend(): Observable<EntityArrayResponseType> {
     this.isLoading = true;
     const queryObject: any = {
-      size: this.itemsPerPage,
+      sort: this.sortService.buildSortParam(this.sortState()),
     };
-    if (this.hasMorePage()) {
-      Object.assign(queryObject, this.links().next);
-    } else if (this.isFirstFetch()) {
-      Object.assign(queryObject, { sort: this.sortService.buildSortParam(this.sortState()) });
-    }
-
     return this.keycloakUserService.query(queryObject).pipe(tap(() => (this.isLoading = false)));
   }
 
   protected handleNavigation(sortState: SortState): void {
-    this.links.set({});
-
     const queryParamsObj = {
       sort: this.sortService.buildSortParam(sortState),
     };

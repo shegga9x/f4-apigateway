@@ -15,7 +15,8 @@
         "title": "Comment"
       },
       "id": "Id",
-      "reelId": "Reel Id",
+      "parentType": "Parent Type",
+      "parentId": "Parent Id",
       "userId": "User Id",
       "content": "Content",
       "createdAt": "Created At"

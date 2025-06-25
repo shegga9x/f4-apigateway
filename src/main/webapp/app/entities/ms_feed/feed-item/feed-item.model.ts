@@ -1,10 +1,16 @@
 import dayjs from 'dayjs/esm';
+import { FeedVisibility } from 'app/entities/enumerations/feed-visibility.model';
 
 export interface IFeedItem {
   id: string;
   userId?: string | null;
-  reelId?: string | null;
-  timestamp?: dayjs.Dayjs | null;
+  content?: string | null;
+  imageUrl?: string | null;
+  videoUrl?: string | null;
+  visibility?: keyof typeof FeedVisibility | null;
+  location?: string | null;
+  createdAt?: dayjs.Dayjs | null;
+  updatedAt?: dayjs.Dayjs | null;
 }
 
 export type NewFeedItem = Omit<IFeedItem, 'id'> & { id: null };

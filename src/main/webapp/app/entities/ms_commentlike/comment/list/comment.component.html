@@ -40,9 +40,16 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
-            <th scope="col" jhiSortBy="reelId">
+            <th scope="col" jhiSortBy="parentType">
               <div class="d-flex">
-                <span jhiTranslate="gatewayApp.msCommentlikeComment.reelId">Reel Id</span>
+                <span jhiTranslate="gatewayApp.msCommentlikeComment.parentType">Parent Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="parentId">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msCommentlikeComment.parentId">Parent Id</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
@@ -77,7 +84,8 @@
               <td>
                 <a [routerLink]="['/comment', comment.id, 'view']">{{ comment.id }}</a>
               </td>
-              <td>{{ comment.reelId }}</td>
+              <td>{{ comment.parentType }}</td>
+              <td>{{ comment.parentId }}</td>
               <td>{{ comment.userId }}</td>
               <td>{{ comment.content }}</td>
               <td>{{ comment.createdAt | formatMediumDatetime }}</td>

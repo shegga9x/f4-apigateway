@@ -7,7 +7,7 @@ export const sampleWithRequiredData: IUser = {
   username: 'swill lumbering',
   email: 'Laurie.Erdman13@hotmail.com',
   passwordHash: 'flat pfft which',
-  createdAt: dayjs('2025-06-13T18:09'),
+  createdAt: dayjs('2025-04-21T12:35'),
   keycloakUserId: '13ac903b-d8c0-4ac9-8763-8cc1d6650465',
 };
 
@@ -16,7 +16,7 @@ export const sampleWithPartialData: IUser = {
   username: 'conceptualize',
   email: 'Chloe_Harris82@yahoo.com',
   passwordHash: 'accountability coagulate strictly',
-  createdAt: dayjs('2025-06-13T17:18'),
+  createdAt: dayjs('2025-04-21T11:45'),
   keycloakUserId: '33663833-200d-4b36-8deb-9f23420b6b7d',
 };
 
@@ -25,7 +25,7 @@ export const sampleWithFullData: IUser = {
   username: 'duh very',
   email: 'Bradly.Hansen18@yahoo.com',
   passwordHash: 'ew foot',
-  createdAt: dayjs('2025-06-14T02:14'),
+  createdAt: dayjs('2025-04-21T20:41'),
   keycloakUserId: '77c65ee3-c295-43ac-be25-0b6d0bec5b1f',
 };
 
@@ -33,7 +33,7 @@ export const sampleWithNewData: NewUser = {
   username: 'mostly crystallize gym',
   email: 'Eunice.Schmitt-Lehner@yahoo.com',
   passwordHash: 'till hm',
-  createdAt: dayjs('2025-06-13T17:49'),
+  createdAt: dayjs('2025-04-21T12:16'),
   keycloakUserId: '4309161e-96d5-49dc-9770-9fb6e9eae7f0',
   id: null,
 };

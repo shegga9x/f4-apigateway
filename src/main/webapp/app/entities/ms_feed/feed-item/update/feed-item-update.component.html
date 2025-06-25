@@ -36,41 +36,87 @@
           }
         </div>
 
-        @let reelIdRef = editForm.get('reelId')!;
         <div class="mb-3">
-          <label class="form-label" for="field_reelId" jhiTranslate="gatewayApp.msFeedFeedItem.reelId">Reel Id</label>
-          <input type="text" class="form-control" name="reelId" id="field_reelId" data-cy="reelId" formControlName="reelId" />
-          @if (reelIdRef.invalid && (reelIdRef.dirty || reelIdRef.touched)) {
-            <div>
-              @if (editForm.get('reelId')?.errors?.required) {
-                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
-              }
-            </div>
-          }
+          <label class="form-label" for="field_content" jhiTranslate="gatewayApp.msFeedFeedItem.content">Content</label>
+          <textarea class="form-control" name="content" id="field_content" data-cy="content" formControlName="content"></textarea>
         </div>
 
-        @let timestampRef = editForm.get('timestamp')!;
         <div class="mb-3">
-          <label class="form-label" for="field_timestamp" jhiTranslate="gatewayApp.msFeedFeedItem.timestamp">Timestamp</label>
+          <label class="form-label" for="field_imageUrl" jhiTranslate="gatewayApp.msFeedFeedItem.imageUrl">Image Url</label>
+          <input type="text" class="form-control" name="imageUrl" id="field_imageUrl" data-cy="imageUrl" formControlName="imageUrl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_videoUrl" jhiTranslate="gatewayApp.msFeedFeedItem.videoUrl">Video Url</label>
+          <input type="text" class="form-control" name="videoUrl" id="field_videoUrl" data-cy="videoUrl" formControlName="videoUrl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_visibility" jhiTranslate="gatewayApp.msFeedFeedItem.visibility">Visibility</label>
+          <select class="form-control" name="visibility" formControlName="visibility" id="field_visibility" data-cy="visibility">
+            <option [ngValue]="null">{{ 'gatewayApp.FeedVisibility.null' | translate }}</option>
+            @for (feedVisibility of feedVisibilityValues; track $index) {
+              <option [value]="feedVisibility">{{ 'gatewayApp.FeedVisibility.' + feedVisibility | translate }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_location" jhiTranslate="gatewayApp.msFeedFeedItem.location">Location</label>
+          <input type="text" class="form-control" name="location" id="field_location" data-cy="location" formControlName="location" />
+        </div>
+
+        @let createdAtRef = editForm.get('createdAt')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_createdAt" jhiTranslate="gatewayApp.msFeedFeedItem.createdAt">Created At</label>
           <div class="d-flex">
             <input
-              id="field_timestamp"
-              data-cy="timestamp"
+              id="field_createdAt"
+              data-cy="createdAt"
               type="datetime-local"
               class="form-control"
-              name="timestamp"
-              formControlName="timestamp"
+              name="createdAt"
+              formControlName="createdAt"
               placeholder="YYYY-MM-DD HH:mm"
             />
           </div>
-          @if (timestampRef.invalid && (timestampRef.dirty || timestampRef.touched)) {
+          @if (createdAtRef.invalid && (createdAtRef.dirty || createdAtRef.touched)) {
             <div>
-              @if (editForm.get('timestamp')?.errors?.required) {
+              @if (editForm.get('createdAt')?.errors?.required) {
                 <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
               }
               <small
                 class="form-text text-danger"
-                [hidden]="!editForm.get('timestamp')?.errors?.datetimelocal"
+                [hidden]="!editForm.get('createdAt')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let updatedAtRef = editForm.get('updatedAt')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_updatedAt" jhiTranslate="gatewayApp.msFeedFeedItem.updatedAt">Updated At</label>
+          <div class="d-flex">
+            <input
+              id="field_updatedAt"
+              data-cy="updatedAt"
+              type="datetime-local"
+              class="form-control"
+              name="updatedAt"
+              formControlName="updatedAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          @if (updatedAtRef.invalid && (updatedAtRef.dirty || updatedAtRef.touched)) {
+            <div>
+              @if (editForm.get('updatedAt')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('updatedAt')?.errors?.datetimelocal"
                 jhiTranslate="entity.validation.datetimelocal"
                 >This field should be a date and time.</small
               >
