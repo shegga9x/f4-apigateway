@@ -29,7 +29,7 @@ export class UserService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/users', 'ms_user');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/users', 'msuser');
 
   create(user: NewUser): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(user);

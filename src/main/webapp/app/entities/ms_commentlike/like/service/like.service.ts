@@ -29,7 +29,7 @@ export class LikeService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/likes', 'ms_commentlike');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/likes', 'mscommentlike');
 
   create(like: NewLike): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(like);

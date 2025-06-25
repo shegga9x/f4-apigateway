@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20250422052415"
   },
-  "applications": ["gateway", "msfeed"],
+  "applications": ["gateway", "ms_feed"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -35,6 +35,18 @@
     {
       "fieldName": "location",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "likesCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "commentsCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sharesCount",
+      "fieldType": "Integer"
     },
     {
       "fieldName": "createdAt",

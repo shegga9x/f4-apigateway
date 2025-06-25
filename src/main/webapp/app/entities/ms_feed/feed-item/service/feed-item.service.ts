@@ -33,8 +33,8 @@ export class FeedItemService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/feed-items', 'ms_feed');
-  protected resourceSearchUrl = this.applicationConfigService.getEndpointFor('api/feed-items/_search', 'ms_feed');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/feed-items', 'msfeed');
+  protected resourceSearchUrl = this.applicationConfigService.getEndpointFor('api/feed-items/_search', 'msfeed');
 
   create(feedItem: NewFeedItem): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(feedItem);

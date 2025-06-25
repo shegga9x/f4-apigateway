@@ -29,7 +29,7 @@ export class CommentService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/comments', 'ms_commentlike');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/comments', 'mscommentlike');
 
   create(comment: NewComment): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(comment);

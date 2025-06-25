@@ -9,6 +9,9 @@ export interface IFeedItem {
   videoUrl?: string | null;
   visibility?: keyof typeof FeedVisibility | null;
   location?: string | null;
+  likesCount?: number | null;
+  commentsCount?: number | null;
+  sharesCount?: number | null;
   createdAt?: dayjs.Dayjs | null;
   updatedAt?: dayjs.Dayjs | null;
 }

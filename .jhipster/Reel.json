@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20250422052415"
   },
-  "applications": ["gateway", "msreel"],
+  "applications": ["gateway", "ms_reel"],
   "dto": "mapstruct",
   "fields": [
     {

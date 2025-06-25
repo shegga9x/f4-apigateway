@@ -17,7 +17,7 @@ export class KeycloakUserService {
   protected readonly http = inject(HttpClient);
   protected readonly applicationConfigService = inject(ApplicationConfigService);
 
-  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/keycloak-users', 'ms_user');
+  protected resourceUrl = this.applicationConfigService.getEndpointFor('api/keycloak-users', 'msuser');
 
   create(keycloakUser: NewKeycloakUser): Observable<EntityResponseType> {
     return this.http.post<IKeycloakUser>(this.resourceUrl, keycloakUser, { observe: 'response' });
