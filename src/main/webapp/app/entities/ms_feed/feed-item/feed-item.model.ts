@@ -10,7 +10,6 @@ export interface IFeedItem {
   visibility?: keyof typeof FeedVisibility | null;
   location?: string | null;
   likesCount?: number | null;
-  commentsCount?: number | null;
   sharesCount?: number | null;
   createdAt?: dayjs.Dayjs | null;
   updatedAt?: dayjs.Dayjs | null;
