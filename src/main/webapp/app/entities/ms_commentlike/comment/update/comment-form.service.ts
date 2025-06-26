@@ -38,8 +38,6 @@ type CommentFormGroupContent = {
   content: FormControl<CommentFormRawValue['content']>;
   createdAt: FormControl<CommentFormRawValue['createdAt']>;
   updatedAt: FormControl<CommentFormRawValue['updatedAt']>;
-  likesCount: FormControl<CommentFormRawValue['likesCount']>;
-  repliesCount: FormControl<CommentFormRawValue['repliesCount']>;
   mentions: FormControl<CommentFormRawValue['mentions']>;
 };
 
@@ -76,12 +74,6 @@ export class CommentFormService {
         validators: [Validators.required],
       }),
       updatedAt: new FormControl(commentRawValue.updatedAt, {
-        validators: [Validators.required],
-      }),
-      likesCount: new FormControl(commentRawValue.likesCount, {
-        validators: [Validators.required],
-      }),
-      repliesCount: new FormControl(commentRawValue.repliesCount, {
         validators: [Validators.required],
       }),
       mentions: new FormControl(commentRawValue.mentions),

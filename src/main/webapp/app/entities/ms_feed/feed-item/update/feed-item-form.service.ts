@@ -38,9 +38,6 @@ type FeedItemFormGroupContent = {
   videoUrl: FormControl<FeedItemFormRawValue['videoUrl']>;
   visibility: FormControl<FeedItemFormRawValue['visibility']>;
   location: FormControl<FeedItemFormRawValue['location']>;
-  likesCount: FormControl<FeedItemFormRawValue['likesCount']>;
-  commentsCount: FormControl<FeedItemFormRawValue['commentsCount']>;
-  sharesCount: FormControl<FeedItemFormRawValue['sharesCount']>;
   createdAt: FormControl<FeedItemFormRawValue['createdAt']>;
   updatedAt: FormControl<FeedItemFormRawValue['updatedAt']>;
 };
@@ -70,9 +67,6 @@ export class FeedItemFormService {
       videoUrl: new FormControl(feedItemRawValue.videoUrl),
       visibility: new FormControl(feedItemRawValue.visibility),
       location: new FormControl(feedItemRawValue.location),
-      likesCount: new FormControl(feedItemRawValue.likesCount),
-      commentsCount: new FormControl(feedItemRawValue.commentsCount),
-      sharesCount: new FormControl(feedItemRawValue.sharesCount),
       createdAt: new FormControl(feedItemRawValue.createdAt, {
         validators: [Validators.required],
       }),

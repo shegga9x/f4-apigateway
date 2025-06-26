@@ -10,8 +10,6 @@ export const sampleWithRequiredData: IComment = {
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T16:37'),
   updatedAt: dayjs('2025-04-21T21:22'),
-  likesCount: 4558,
-  repliesCount: 24082,
 };
 
 export const sampleWithPartialData: IComment = {
@@ -22,9 +20,7 @@ export const sampleWithPartialData: IComment = {
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T15:03'),
   updatedAt: dayjs('2025-04-21T10:22'),
-  likesCount: 6625,
-  repliesCount: 8716,
-  mentions: '5a73f14d-0b2f-4d5c-bae5-79be469f502e',
+  mentions: '345a73f1-4d0b-42fd-85ca-e579be469f50',
 };
 
 export const sampleWithFullData: IComment = {
@@ -35,9 +31,7 @@ export const sampleWithFullData: IComment = {
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T19:05'),
   updatedAt: dayjs('2025-04-21T10:57'),
-  likesCount: 9231,
-  repliesCount: 28854,
-  mentions: '7ffb2ea3-231a-4899-b7cb-61b278937544',
+  mentions: '4e7ffb2e-a323-41a8-9997-cb61b2789375',
 };
 
 export const sampleWithNewData: NewComment = {
@@ -47,8 +41,6 @@ export const sampleWithNewData: NewComment = {
   content: '../fake-data/blob/hipster.txt',
   createdAt: dayjs('2025-04-21T20:13'),
   updatedAt: dayjs('2025-04-21T21:44'),
-  likesCount: 24922,
-  repliesCount: 26122,
   id: null,
 };
 

@@ -8,8 +8,6 @@ export interface IComment {
   content?: string | null;
   createdAt?: dayjs.Dayjs | null;
   updatedAt?: dayjs.Dayjs | null;
-  likesCount?: number | null;
-  repliesCount?: number | null;
   mentions?: string | null;
 }
 

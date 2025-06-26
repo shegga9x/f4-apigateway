@@ -22,9 +22,6 @@
       "videoUrl": "Video Url",
       "visibility": "Visibility",
       "location": "Location",
-      "likesCount": "Likes Count",
-      "commentsCount": "Comments Count",
-      "sharesCount": "Shares Count",
       "createdAt": "Created At",
       "updatedAt": "Updated At"
     }

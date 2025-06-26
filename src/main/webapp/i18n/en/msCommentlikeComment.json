@@ -21,8 +21,6 @@
       "content": "Content",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
-      "likesCount": "Likes Count",
-      "repliesCount": "Replies Count",
       "mentions": "Mentions"
     }
   },

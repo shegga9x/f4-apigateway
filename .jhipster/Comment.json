@@ -41,16 +41,6 @@
       "fieldValidateRules": ["required"]
     },
     {
-      "fieldName": "likesCount",
-      "fieldType": "Integer",
-      "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "repliesCount",
-      "fieldType": "Integer",
-      "fieldValidateRules": ["required"]
-    },
-    {
       "fieldName": "mentions",
       "fieldType": "UUID"
     }
