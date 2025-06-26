@@ -25,6 +25,7 @@ describe('User Form Service', () => {
             passwordHash: expect.any(Object),
             createdAt: expect.any(Object),
             keycloakUserId: expect.any(Object),
+            userAvatar: expect.any(Object),
           }),
         );
       });
@@ -40,6 +41,7 @@ describe('User Form Service', () => {
             passwordHash: expect.any(Object),
             createdAt: expect.any(Object),
             keycloakUserId: expect.any(Object),
+            userAvatar: expect.any(Object),
           }),
         );
       });

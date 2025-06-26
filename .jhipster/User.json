@@ -34,6 +34,10 @@
       "fieldName": "keycloakUserId",
       "fieldType": "UUID",
       "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "userAvatar",
+      "fieldType": "String"
     }
   ],
   "microserviceName": "ms_user",

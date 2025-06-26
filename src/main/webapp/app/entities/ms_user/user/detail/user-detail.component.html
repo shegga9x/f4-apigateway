@@ -35,6 +35,10 @@
           <dd>
             <span>{{ userRef.keycloakUserId }}</span>
           </dd>
+          <dt><span jhiTranslate="gatewayApp.msUserUser.userAvatar">User Avatar</span></dt>
+          <dd>
+            <span>{{ userRef.userAvatar }}</span>
+          </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

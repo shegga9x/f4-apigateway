@@ -75,6 +75,13 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
+            <th scope="col" jhiSortBy="userAvatar">
+              <div class="d-flex">
+                <span jhiTranslate="gatewayApp.msUserUser.userAvatar">User Avatar</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -89,6 +96,7 @@
               <td>{{ user.passwordHash }}</td>
               <td>{{ user.createdAt | formatMediumDatetime }}</td>
               <td>{{ user.keycloakUserId }}</td>
+              <td>{{ user.userAvatar }}</td>
               <td class="text-end">
                 <div class="btn-group">
                   <a [routerLink]="['/user', user.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

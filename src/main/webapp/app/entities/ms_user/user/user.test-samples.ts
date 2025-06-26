@@ -12,12 +12,13 @@ export const sampleWithRequiredData: IUser = {
 };
 
 export const sampleWithPartialData: IUser = {
-  id: '09076bdf-799b-4280-a46d-d5d1b0596d4e',
-  username: 'conceptualize',
-  email: 'Chloe_Harris82@yahoo.com',
-  passwordHash: 'accountability coagulate strictly',
-  createdAt: dayjs('2025-04-21T11:45'),
-  keycloakUserId: '33663833-200d-4b36-8deb-9f23420b6b7d',
+  id: '9076bdf7-99b2-4804-86dd-5d1b0596d4e8',
+  username: 'intervention tectonics',
+  email: 'Bryce.Ryan72@gmail.com',
+  passwordHash: 'instantly',
+  createdAt: dayjs('2025-04-22T01:28'),
+  keycloakUserId: '3136c433-6638-4332-800d-b36deb9f2342',
+  userAvatar: 'excluding badly waft',
 };
 
 export const sampleWithFullData: IUser = {
@@ -27,6 +28,7 @@ export const sampleWithFullData: IUser = {
   passwordHash: 'ew foot',
   createdAt: dayjs('2025-04-21T20:41'),
   keycloakUserId: '77c65ee3-c295-43ac-be25-0b6d0bec5b1f',
+  userAvatar: 'haunting',
 };
 
 export const sampleWithNewData: NewUser = {

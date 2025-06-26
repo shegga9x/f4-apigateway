@@ -36,6 +36,7 @@ type UserFormGroupContent = {
   passwordHash: FormControl<UserFormRawValue['passwordHash']>;
   createdAt: FormControl<UserFormRawValue['createdAt']>;
   keycloakUserId: FormControl<UserFormRawValue['keycloakUserId']>;
+  userAvatar: FormControl<UserFormRawValue['userAvatar']>;
 };
 
 export type UserFormGroup = FormGroup<UserFormGroupContent>;
@@ -70,6 +71,7 @@ export class UserFormService {
       keycloakUserId: new FormControl(userRawValue.keycloakUserId, {
         validators: [Validators.required],
       }),
+      userAvatar: new FormControl(userRawValue.userAvatar),
     });
   }
 

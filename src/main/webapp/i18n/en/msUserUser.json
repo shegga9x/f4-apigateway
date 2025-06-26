@@ -19,7 +19,8 @@
       "email": "Email",
       "passwordHash": "Password Hash",
       "createdAt": "Created At",
-      "keycloakUserId": "Keycloak User Id"
+      "keycloakUserId": "Keycloak User Id",
+      "userAvatar": "User Avatar"
     }
   },
   "msUserApp": {

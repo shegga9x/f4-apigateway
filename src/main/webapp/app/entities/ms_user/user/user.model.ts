@@ -7,6 +7,7 @@ export interface IUser {
   passwordHash?: string | null;
   createdAt?: dayjs.Dayjs | null;
   keycloakUserId?: string | null;
+  userAvatar?: string | null;
 }
 
 export type NewUser = Omit<IUser, 'id'> & { id: null };
